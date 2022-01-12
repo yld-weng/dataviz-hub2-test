@@ -1,4 +1,4 @@
-<h1 align="center">Dataviz.Shef (TEST)</h1>
+<h1 align="center">Dataviz.Shef (TEST2)</h1>
 
 <div align="center">
   <i>Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</i>
