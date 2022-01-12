@@ -1,0 +1,71 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      Name:   
+        required: true
+        default: 'Re-run the workflow'
+      Description:
+        default: ''  
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      
+      - name: NPM Cache
+        id: npm-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-cache-
+
+      - name: Gatsby Cache
+        id: gatsby-deploy-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-deploy-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-gatsby-deploy-
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Set user info
+        run: |
+          git config --local user.email "support+actions@github.com"
+          git config --local user.name "github-actions-bot"
+        
+      - name: Deploy
+        run: npm run deploy
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
+          EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
+          EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
+          EVENT_ORG_ID_2: ${{ secrets.EVENT_ORG_ID_2 }}
+          GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
+          GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
+
+

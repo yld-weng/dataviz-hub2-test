@@ -1,0 +1,298 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollBar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Large (lg) */
+@media (min-width: 1024px) {
+  .fade-box {
+    max-height: 170px;
+    padding-bottom: 30px;
+  }
+}
+
+/* Extra Large (xl) */
+@media (min-width: 1281px) {
+  .fade-box {
+    max-height: 200px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Extra 2 Large (2xl) */
+@media (min-width: 1400px) {
+  .fade-box {
+    max-height: 230px;
+    padding-bottom: 10px;
+  }
+  .fade-box:after {
+    height: calc((8.75vw - 30px) / 2) !important;
+  }
+}
+
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1441px;
+  }
+}
+
+/*****
+* Linear Faded box for blog grid
+*/
+.fade-box {
+  position: relative;
+  z-index: 20;
+
+  &:after {
+    background-size: 100%;
+    background-image: -webkit-gradient(
+      linear,
+      50% 0,
+      50% 100%,
+      color-stop(0, rgba(255, 255, 255, 0)),
+      color-stop(100%, #fff)
+    );
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), #fff);
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), #fff);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), #fff);
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // calc((18.75vw - 30px) / 2)
+    height: calc((12.75vw - 30px) / 2);
+  }
+}
+
+/*******
+* Scroll to Top button 
+*/
+.scrollTop-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  transition: all 0.7s ease;
+  z-index: 99;
+  text-align: center;
+  opacity: 0;
+
+  &:hover {
+    /*     background: rgba(0, 0, 0, 0.9); */
+    background: #00aeef;
+    z-index: 99;
+  }
+
+  & > .scrollTopArrow {
+    top: 7px;
+    left: 10px;
+    transition: all 0.4s ease;
+  }
+
+  &:hover > .scrollTopArrow {
+    top: 2px;
+    left: 10px;
+    z-index: 99;
+    color: white;
+    transition: all 0.4s ease;
+  }
+}
+
+/*********  
+Home Search bar & animation 
+**********
+*****/
+.searchIcon {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.typewriter {
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
+    animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
+
+    &:nth-child(2) {
+      opacity: 0;
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+/******** 
+*Home Scroll down button & animation  
+**/
+#scrollDown-btn span {
+  position: absolute;
+  top: 0;
+  border-left: 2px solid rgb(61, 61, 61);
+  border-bottom: 2px solid rgb(68, 68, 68);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 1.5s infinite;
+  animation: sdb 1.5s infinite;
+  box-sizing: border-box;
+}
+
+/******** 
+* Link hover animation 
+**/
+.link-effect {
+  color: #000000;
+  padding-bottom: 4px;
+  background: linear-gradient(
+    225deg,
+    rgba(255, 121, 180, 1) 20%,
+    rgba(255, 134, 250, 1) 50%,
+    rgba(41, 197, 255, 1) 82%
+  );
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: right 85%;
+  text-shadow: none;
+  transition: 0.3s linear;
+
+  // &:hover {
+  //   background: none;
+  // }
+}
+
+.link-effect:hover,
+.link-effect:link:active,
+.link-effect:visited:active,
+.link-effect:visited:hover,
+.link-effect-hover:hover,
+.link-effect-hover:link:active,
+.link-effect-hover:visited:active,
+.link-effect-hover:visited:hover {
+  color: #00aeef;
+  animation: inline-link-hover 0.6s ease-out 1;
+}
+
+/* Past event effect 
+*
+*/
+.themeColourBorder {
+  border: 2px solid #251d5a;
+  //border-right: solid 6px #251d5a;
+  border-width: 2px 3px 2px 3px;
+  transition: 0.2s ease;
+  background: white;
+
+  &:hover {
+    border-image-source: linear-gradient(
+      225deg,
+      rgba(255, 121, 180, 1) 20%,
+      rgba(255, 134, 250, 1) 50%,
+      rgba(41, 197, 255, 1) 82%
+    );
+    border-image-slice: 1;
+    //background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+  }
+}
+
+/* Text effect
+*
+*/
+.text-effect {
+  background: linear-gradient(225deg, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease;
+
+  &:hover {
+    background: linear-gradient(
+      225deg,
+      rgba(255, 121, 180, 1) 20%,
+      rgba(255, 134, 250, 1) 50%,
+      rgba(41, 197, 255, 1) 82%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/*
+* Table of content
+*/
+.TOC {
+  & li > a {
+    color: rgb(158, 158, 158);
+    transition: 0.5s ease;
+  }
+  & li.active > a {
+    color: rgb(34, 34, 34);
+    font-weight: 600;
+    border-left: #00aeef 6px solid;
+    padding-left: 8px;
+  }
+}
+
+/* 
+*  Accessibility statement
+*/
+.accAbt {
+  padding-left: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.3rem;
+  border-left: 1rem solid #11b1ff;
+  font-family: "TUOS Stephenson", Georgia, Times, serif;
+}
+h1.accAbt {
+  @extend .accAbt;
+  font-size: 2rem;
+  margin-top: 5rem;
+  border-left: 1.7rem solid #1961ae;
+}
+h2.accAbt {
+  @extend .accAbt;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
+.accAbtSubItem {
+  padding-left: 2rem;
+}
