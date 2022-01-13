@@ -35,7 +35,7 @@
         "transform": "./coventional-changelog-angular-transform.js"
       }
     }],
-    [
+    [ 
       "@semantic-release/changelog",
       {
         "changelogFile": "CHANGELOG.mdx"
