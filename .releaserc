@@ -30,7 +30,11 @@
         "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
       }
     }],
-    "@semantic-release/release-notes-generator",
+    ["@semantic-release/release-notes-generator", {
+      "writerOpts": {
+        "transform": "./coventional-changelog-angular-transform.js"
+      }
+    }],
     [
       "@semantic-release/changelog",
       {
