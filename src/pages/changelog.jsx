@@ -32,7 +32,7 @@ const Changelog = () => {
             letterSpacing: ".4rem"
           }}
         >
-          CHANGELOG
+          CHANGELOG 
         </h1>
         <h3 style={{ fontSize: "1.5rem", color: "#595959" }}>
           🥳 What&apos;s new?
