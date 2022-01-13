@@ -32,10 +32,10 @@ const Changelog = () => {
             letterSpacing: ".4rem"
           }}
         >
-          CHANGELOG
-        </h1>
+          CHANGELOG 
+        </h1> 
         <h3 style={{ fontSize: "1.5rem", color: "#595959" }}>
-          🥳 What&apos;s new?
+          🥳 What&apos;s new? 
         </h3>
       </div>
       <div
