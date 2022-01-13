@@ -12,7 +12,7 @@
     "build:noGA": "cross-env QA_ENV=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "develop:noCache": "gatsby clean && gatsby develop", 
-    "lint": "npx lint-staged",
+    "lint": "npx lint-staged", 
     "test": "jest --testPathIgnorePatterns \".*/.+(e2e|ignore).+(ts|js)\"",
     "test:ci": "npm run test -- --ci --coverage",
     "test:watch": "npm run test -- --watchAll",
