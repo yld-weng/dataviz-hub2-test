@@ -2,9 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ master ]
-  schedule:
-    - cron: '0 5 * * *'
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       Name:   
@@ -25,9 +23,7 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
         
-      - uses: actions/checkout@v2
-        with:
-          ref: master
+      - uses: actions/checkout@v2 
       
       - name: NPM Cache
         id: npm-cache
@@ -54,9 +50,16 @@ jobs:
         run: |
           git config --local user.email "support+actions@github.com"
           git config --local user.name "github-actions-bot"
+
+      - name: Semantic Release
+        run: npx semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      
+      - uses: actions/checkout@v2 
         
       - name: Deploy
-        run: npm run deploy
+        run: npm run deploy:qa
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
