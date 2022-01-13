@@ -104,7 +104,7 @@ module.exports = {
                   return `[@${username}](${context.host}/${username})`;
                 }
               );
-            }
+            } 
           }
   
           // remove references that already appear in the subject
