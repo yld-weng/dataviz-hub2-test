@@ -1,4 +1,4 @@
-# Contributing to Dataviz.Shef
+# Contributing to Dataviz.Shef 
 
 This is your community around interactive data visualisation at TUoS and we would love to have your contribution anytime. Please see the following guidelines for contributors:
 
