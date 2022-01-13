@@ -42,6 +42,7 @@ module.exports = {
           commit.notes.forEach((note) => {
             note.title = `BREAKING CHANGES`;
           });
+          console.log("commit type: ", commit.type)
   
           // NOTE: Any changes here must be reflected in `CONTRIBUTING.md`.
           if (commit.type === `feat`) {
