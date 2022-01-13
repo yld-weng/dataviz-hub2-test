@@ -19,6 +19,7 @@ module.exports = {
           { type: "perf", release: "patch" },
           { type: "docs", scope: "README", release: "patch" },
           { type: "docs", scope: "new-*", release: "minor" },
+          { type: "docs", release: "patch" },
           { type: "refactor", scope: "core-*", release: "minor" },
           { type: "refactor", release: "patch" },
           { type: "style", release: "patch" },
