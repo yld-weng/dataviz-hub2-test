@@ -33,7 +33,7 @@ const Changelog = () => {
           }}
         >
           CHANGELOG 
-        </h1>
+        </h1> 
         <h3 style={{ fontSize: "1.5rem", color: "#595959" }}>
           🥳 What&apos;s new? 
         </h3>
