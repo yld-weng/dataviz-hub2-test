@@ -36,6 +36,11 @@ export const presetConfig = {
       "hidden": false
     },
     {
+      "type": "build",
+      "section": ":hammer: Build/Dependencies",
+      "hidden": false
+    },
+    {
       "type": "ci",
       "section": ":wrench: Continuous Integration",
       "hidden": false

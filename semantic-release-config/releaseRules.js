@@ -1,4 +1,4 @@
-export const config = [
+module.exports = [
   { type: "feat", release: "minor" },
   { type: "fix", release: "patch" },
   { type: "perf", release: "patch" },
@@ -8,6 +8,8 @@ export const config = [
   { type: "refactor", release: "patch" },
   { type: "style", release: "patch" },
   { type: "test", release: "patch" },
+  { type: "build", release: "patch" },
+  { type: "ci", release: "patch" },
   { type: "chore", release: "patch" },
   { breaking: true, release: "major" },
   { revert: true, release: "patch" },
