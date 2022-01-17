@@ -12,6 +12,7 @@ module.exports = {
     [
       "@semantic-release/commit-analyzer",
       {
+        "preset": "conventionalcommits",
         releaseRules: "./semantic-release-config/releaseRules.js",
         parserOpts: {
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
