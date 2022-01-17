@@ -1,4 +1,4 @@
-export const presetConfig = {
+module.exports = {
   "types": [
     {
       "type": "feat",
