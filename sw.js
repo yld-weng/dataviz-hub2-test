@@ -27,13 +27,13 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-1c11e1fb963906853cd4.js"
+    "url": "webpack-runtime-29d3df58b96253a24824.js"
   },
   {
     "url": "framework-a564afea5b9c0ff2293c.js"
   },
   {
-    "url": "styles.2aaade82c06feb979a3d.css"
+    "url": "styles.4fe0e59b993bec5dcc1b.css"
   },
   {
     "url": "de71a805-9d4b1f644990161f6ca2.js"
@@ -58,7 +58,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "9a4da3c5d6de30762d9a472e7655e94b"
+    "revision": "71e206467ddef0e4415dc13a4215af9f"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-3e463f10012332484932.js"
@@ -69,14 +69,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "66ebe003a535b38582038593878639a6"
+    "revision": "9c8001454e8752b94de14d666cb9e094"
   },
   {
     "url": "polyfill-a1f2c90029bc30affc66.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "5504ffc6f613bdd66600ab7c28564708"
+    "revision": "cfe727e736796a1a03a55fc9a7210680"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -163,12 +163,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/dataviz-hub2-qa`), ``)
+  pathname = pathname.replace(new RegExp(`^/dataviz-hub2-test`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/dataviz-hub2-qa/app-0d27a641cfc0863c9a92.js`))) {
+  if (!resources || !(await caches.match(`/dataviz-hub2-test/app-f55b04bc2018f2b0a618.js`))) {
     return await fetch(event.request)
   }
 
@@ -181,7 +181,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/dataviz-hub2-qa/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/dataviz-hub2-test/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
