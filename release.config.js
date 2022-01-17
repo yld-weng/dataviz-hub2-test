@@ -70,7 +70,7 @@ module.exports = {
           },
           {
             "type": "chore",
-            "hidden": true
+            "hidden": true 
           }
         ]
       }
