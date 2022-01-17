@@ -33,7 +33,7 @@ module.exports = {
             "section": ":bug: Bug Fixes",
             "hidden": false
           },
-          {
+          { 
             "type": "docs",
             "section": ":memo: Documentation",
             "hidden": false
