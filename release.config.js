@@ -21,7 +21,9 @@ module.exports = {
     ],
     ["@semantic-release/release-notes-generator", {
       "preset": "conventionalcommits",
-      "presetConfig": "./semantic-release-config/conventionalCommits-preset.js"
+      "presetConfig": {
+        "types": "./semantic-release-config/conventionalCommits-preset.js"
+      }
     }],
     [
       "@semantic-release/changelog", 
