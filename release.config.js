@@ -12,7 +12,7 @@ module.exports = {
     [
       "@semantic-release/commit-analyzer",
       {
-        releaseRules: "semantic-release-config/releaseRules.js",
+        releaseRules: "./semantic-release-config/releaseRules.js",
         parserOpts: {
           noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
         }
@@ -20,7 +20,7 @@ module.exports = {
     ],
     ["@semantic-release/release-notes-generator", {
       "preset": "conventionalcommits",
-      "presetConfig": "semantic-release-config/conventionalCommits-preset.js"
+      "presetConfig": "./semantic-release-config/conventionalCommits-preset.js"
     }],
     [
       "@semantic-release/changelog",
