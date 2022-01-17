@@ -24,7 +24,7 @@ module.exports = {
       "presetConfig": "./semantic-release-config/conventionalCommits-preset.js"
     }],
     [
-      "@semantic-release/changelog",
+      "@semantic-release/changelog", 
       {
         changelogFile: "CHANGELOG.mdx"
       }
