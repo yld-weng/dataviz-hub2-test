@@ -1,0 +1,30 @@
+name: Webhook
+
+on:
+  workflow_dispatch:
+    inputs:
+      Name:   
+        required: true
+        default: 'Re-run the workflow'
+      Description:
+        default: ''  
+
+jobs:
+  CI-Build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - uses: actions/checkout@v2
+
+      - name: NPM Cache
+        id: npm-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-cache-
