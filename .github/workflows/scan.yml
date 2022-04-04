@@ -50,7 +50,7 @@ jobs:
           --header 'Authorization: Basic ${{ secrets.WEBHOOK_TOKEN }}' \
           --header 'Content-Type: application/json' \
           --url '${{ secrets.WEBHOOK_URL }}' \
-          --data "{ \
+          --data '{ \
             "origin": "GitHub", \
             "project": "dataviz-hub", \
             "commit_title": "New release", \
@@ -60,5 +60,5 @@ jobs:
             "run_url": "https://github.com/researchdata-sheffield/dataviz-hub2/actions/runs/${{ github.run_id }}", \
             "impact": "Low", \
             "benefit": "New release" \
-          }" 
+          }'
         
