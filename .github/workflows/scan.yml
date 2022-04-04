@@ -49,7 +49,7 @@ jobs:
           --request POST \
           --header 'Authorization: Basic ${{ secrets.WEBHOOK_TOKEN }}' \
           --header 'Content-Type: application/json' \
-          --url ${{ secrets.WEBHOOK_URL }} \
+          --url '${{ secrets.WEBHOOK_URL }}' \
           --data "{ \
             "origin": "GitHub", \
             "project": "dataviz-hub", \
