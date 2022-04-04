@@ -46,10 +46,8 @@ jobs:
         # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
         run: |
           curl --write-out '%{http_code}' \
-          --silent \
-          --output /dev/null \
           --request POST \
-          --header 'authorization: Basic ${{ secrets.WEBHOOK_TOKEN }}' \
+          --header 'Authorization: Basic ${{ secrets.WEBHOOK_TOKEN }}' \
           --header 'Content-Type: application/json' \
           --url ${{ secrets.WEBHOOK_URL }} \
           --data "{ \
@@ -57,7 +55,7 @@ jobs:
             "project": "dataviz-hub", \
             "commit_title": "New release", \
             "commit_message": "${{ github.event.commits[0].message }}", \
-            "commit_sha": ${{ github.sha }} \
+            "commit_sha": "${{ github.sha }}", \
             "outcome": "${{ needs.scan.result }}", \
             "run_url": "https://github.com/researchdata-sheffield/dataviz-hub2/actions/runs/${{ github.run_id }}", \
             "impact": "Low", \
