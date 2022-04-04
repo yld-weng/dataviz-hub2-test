@@ -47,7 +47,7 @@ jobs:
         run: |
           curl --write-out '%{http_code}' \
           --silent \
-          -- output /dev/null \
+          --output /dev/null \
           --request POST \
           --header 'authorization: Basic ${{ secrets.WEBHOOK_TOKEN }}' \
           --header 'content-type: application/json' \
