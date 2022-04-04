@@ -55,7 +55,7 @@ jobs:
             "project": "dataviz-hub",
             "commit_title": "New release",
             "commit_message": "${{ github.event.commits[0].message }}",
-            "commit_sha": "${{ github.sha }}",
+            "commit_sha": "${{ github.sha::8 }}",
             "outcome": "${{ needs.scan.result }}",
             "run_url": "https://github.com/researchdata-sheffield/dataviz-hub2/actions/runs/${{ github.run_id }}",
             "impact": "Low",
